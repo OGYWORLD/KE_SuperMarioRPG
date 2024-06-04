@@ -15,6 +15,10 @@ public class CComboGauge : MonoBehaviour
 
     public Image gaugeImage = null;
 
+    public Animator matorFullEff = null;
+
+    private bool isGameSrt = false;
+
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -23,14 +27,20 @@ public class CComboGauge : MonoBehaviour
 
     void Update()
     {
-        if(btlManager.status != 6 && btlManager.status != 7)
+        SetGaugeFillAmount();
+
+        if (btlManager.status != 6 && btlManager.status != 7)
         {
+            ShowFullEff();
             ShowGauge();
         }
         else
         {
+            gaugePercent.text = "";
             anim.SetBool("state", false);
             textBox.SetActive(false);
+            matorFullEff.SetBool("state", false);
+            isGameSrt = false;
         }
     }
 
@@ -51,6 +61,27 @@ public class CComboGauge : MonoBehaviour
         anim.SetBool("state", true);
         gaugePercent.text = "%";
         textBox.SetActive(true);
+        isGameSrt = true;
+    }
+
+    void SetGaugeFillAmount()
+    {
+        gaugeImage.fillAmount = GameManager.instance.gauge * 0.01f;
+    }
+
+    void ShowFullEff()
+    {
+        if(isGameSrt)
+        {
+            if (gaugeImage.fillAmount >= 1)
+            {
+                matorFullEff.SetBool("state", true);
+            }
+            else
+            {
+                matorFullEff.SetBool("state", false);
+            }
+        }
     }
 
     public void SetGauge10()

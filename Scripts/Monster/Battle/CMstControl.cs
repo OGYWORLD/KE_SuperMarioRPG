@@ -199,7 +199,12 @@ public class CMstControl : MonoBehaviour
     {
         if (isScAtkCmd)
         {
-            GameManager.instance.members[(int)attackTo].m_curhp -= (GameManager.instance.monStats[GameManager.instance.btlMoster].m_atk - GameManager.instance.members[(int)attackTo].m_stat.m_defense);
+            int dam = GameManager.instance.monStats[GameManager.instance.btlMoster].m_atk - GameManager.instance.members[(int)attackTo].m_stat.m_defense;
+            if(dam < 0)
+            {
+                dam = 0;
+            }
+            GameManager.instance.members[(int)attackTo].m_curhp -= dam;
             StartCoroutine(UpdateBarAnim((int)attackTo, GameManager.instance.monStats[GameManager.instance.btlMoster].m_atk - GameManager.instance.members[(int)attackTo].m_stat.m_defense));
         }
         else

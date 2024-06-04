@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ground_cube_water-f01_ground_c3_mj_w
+  m_Shader: {fileID: 4800000, guid: 94f3724a036422743b47a0a14fe54404, type: 3}
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2998
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
+  - DepthOnly
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      Cubemap:
+        m_Texture: {fileID: 8900000, guid: 03c0771ba138edc4887082cedc3a4672, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      Form_tex:
+        m_Texture: {fileID: 2800000, guid: e0114912c426c4e47853698d4604f36c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      dist_tex:
+        m_Texture: {fileID: 2800000, guid: faf961ba8946c11408068b30caf9c814, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal:
+        m_Texture: {fileID: 2800000, guid: 3338bfac50fb9524696c601eb30e15bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal2:
+        m_Texture: {fileID: 2800000, guid: 02f706ad79b76bc49975a1306d79af23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      Form_power: 0.425
+      _AlphaClip: 0
+      _Blend: 0
+      _BumpScale: 1
+      _CastShadows: 0
+      _ClearCoatMask: 0
+      _ClearCoatSmoothness: 0
+      _CubemapRate: 0.07
+      _Cubemap_nml_power: 0.183
+      _Cull: 2
+      _Cutoff: 0.5
+      _Deepness1: -11.24
+      _Deepness2: -2.29
+      _DetailAlbedoMapScale: 1
+      _DetailNormalMapScale: 1
+      _DstBlend: 10
+      _EnvironmentReflections: 1
+      _Form_size: 0.341
+      _GlossMapScale: 0
+      _Glossiness: 0
+      _GlossyReflections: 0
+      _GradationX: 0
+      _GradationY: -1.44
+      _Metallic: 0
+      _OcclusionStrength: 1
+      _Parallax: 0.005
+      _QueueControl: 0
+      _QueueOffset: -2
+      _ReceiveShadows: 0
+      _Smoothness: 0.5
+      _SmoothnessTextureChannel: 0
+      _SpecularHighlights: 1
+      _SrcBlend: 5
+      _Surface: 1
+      _WorkflowMode: 1
+      _ZTest: 4
+      _ZWrite: 0
+      _ZWriteControl: 0
+      _metallic: 0
+      alpha_1: 1
+      normal2_power: -1.8
+      normal2_rot: -87
+      normal_power: -1.09
+      normal_rot: 48
+      ref_dist_power: 0.06
+      smoothness: 0.758
+    m_Colors:
+      Form_color: {r: 0.79607844, g: 0.92156863, b: 1, a: 0}
+      Form_speed1: {r: 0.1, g: -0.04, b: 0, a: 0}
+      Form_speed2: {r: -0.08, g: 0.1, b: 0, a: 0}
+      Form_tex_scale: {r: 2.31, g: 1.06, b: 0, a: 0}
+      _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+      _main_color: {r: 0.03529412, g: 0.21176466, b: 0.37647057, a: 1}
+      gradationColorA: {r: 0.5137254, g: 0.8352941, b: 1, a: 1}
+      gradationColorB: {r: 0.046724766, g: 0.13834894, b: 0.28301883, a: 1}
+      normal2_scroll_speed: {r: -0.015, g: -0.075, b: 0, a: 0}
+      normal2_tilling: {r: 20, g: 8.6, b: 0, a: 0}
+      normal_scroll_speed: {r: 0.002, g: -0.0001, b: 0, a: 0}
+      normal_tilling: {r: 0.49, g: 0.28, b: 0, a: 0}
+      ref_dist_scroll_speed: {r: 0.01, g: -0.01, b: 0, a: 0}
+      ref_dist_tilling: {r: 3.76, g: 3.4, b: 0, a: 0}
+      ref_dist_vec: {r: -0.05, g: 0.18, b: 0, a: 0}
+  m_BuildTextureStacks: []

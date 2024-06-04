@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: e31out_w_inM
+  m_Shader: {fileID: 4800000, guid: 86c56b5a456612643866255e95d2d765, type: 3}
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _main_nml:
+        m_Texture: {fileID: 2800000, guid: af0da888e3ef5214a9de6741d40262ef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _main_tex:
+        m_Texture: {fileID: 2800000, guid: faf961ba8946c11408068b30caf9c814, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      dist_tex:
+        m_Texture: {fileID: 2800000, guid: faf961ba8946c11408068b30caf9c814, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal2:
+        m_Texture: {fileID: 2800000, guid: 066f77aa3ee1f5d4981263aed47d3e6b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      Cubemap_power: 0
+      Deepness: 1
+      Float_1: 0
+      Form_size: 1
+      RefrectionRate: 0
+      StepPower: 1
+      _AlphaClip: 0
+      _Blend: 0
+      _CastShadows: 1
+      _Cull: 2
+      _DstBlend: 10
+      _Float: 0.562
+      _QueueControl: 0
+      _QueueOffset: 1
+      _RECEIVE_SHADOWS_OFF: 1
+      _ReceiveShadows: 1
+      _SrcBlend: 5
+      _Surface: 1
+      _WorkflowMode: 1
+      _ZTest: 4
+      _ZWrite: 0
+      _ZWriteControl: 0
+      _nami_nml_power: 1
+      alpha: 0
+      alpha_1: 0.7
+      dist_power: 0
+      gradationX: 1
+      gradationY: 1
+      normal2_power: 2
+      normal2_rot: 0
+      normal_power: 1.57
+      normal_rot: 0
+      ref_dist_power: 1
+      rot: 0
+      sky_alpha: 0
+      sky_rot: 0
+      smoothness: 1
+      wave_alpha: 0
+      wave_lit_alpha: 0
+    m_Colors:
+      Form_Min_Max: {r: 0.2, g: 0.3, b: 0, a: 0}
+      Form_color: {r: 1, g: 1, b: 1, a: 0}
+      Form_tex_scale: {r: 0, g: 0, b: 0, a: 0}
+      _Color: {r: 0, g: 0, b: 0, a: 0}
+      _Color_add: {r: 0.64106447, g: 0.7903172, b: 0.9245283, a: 0}
+      _nami2_offset: {r: 1, g: 1, b: 0, a: 0}
+      _nami2_speed: {r: -1.5, g: 0, b: 0, a: 0}
+      _nami2_tilling: {r: 4, g: 4, b: 0, a: 0}
+      _nami_speed: {r: -1, g: 0, b: 0, a: 0}
+      _nami_tilling: {r: 1, g: 1, b: 0, a: 0}
+      center: {r: 0.5, g: 0.5, b: 0, a: 0}
+      dist_scroll_speed: {r: 0, g: 0, b: 0, a: 0}
+      dist_tilling: {r: 1, g: 1, b: 0, a: 0}
+      dist_vec: {r: 1, g: 1, b: 0, a: 0}
+      gradationColorA: {r: 0, g: 0, b: 0, a: 0}
+      gradationColorB: {r: 0, g: 0.9806141, b: 1, a: 0}
+      normal2_scroll_speed: {r: -1, g: 0, b: 0, a: 0}
+      normal2_tilling: {r: 1, g: 1, b: 0, a: 0}
+      normal_scroll_speed: {r: -1, g: 0, b: 0, a: 0}
+      normal_tilling: {r: 1, g: 1, b: 0, a: 0}
+      ref_dist_scroll_speed: {r: -1, g: 0, b: 0, a: 0}
+      ref_dist_tilling: {r: 1, g: 1, b: 0, a: 0}
+      ref_dist_vec: {r: 1, g: 1, b: 0, a: 0}
+      ref_offset: {r: 0, g: 0, b: 0, a: 0}
+      ref_tilling: {r: 1, g: 1, b: 0, a: 0}
+      sky_scroll_speed: {r: 0, g: 0, b: 0, a: 0}
+      sky_tiling: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []

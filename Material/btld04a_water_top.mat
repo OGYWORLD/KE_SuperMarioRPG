@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: btld04a_water_top
+  m_Shader: {fileID: 4800000, guid: af8060397a351da4aa900a171e2199ae, type: 3}
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      Cubemap:
+        m_Texture: {fileID: 8900000, guid: 7053c439a116bd04694f4b89caf38503, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      Wave_tex:
+        m_Texture: {fileID: 2800000, guid: 35145a36f52e573488d8e7ea21ae46f0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _ReflectionTex4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      dist_tex:
+        m_Texture: {fileID: 2800000, guid: ca6740ce034dfae4f9cb3b2b1af64207, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal:
+        m_Texture: {fileID: 2800000, guid: 02f706ad79b76bc49975a1306d79af23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal2:
+        m_Texture: {fileID: 2800000, guid: 3338bfac50fb9524696c601eb30e15bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      Cubemap_power: 0.5
+      Deepness: -27.03
+      Deepness1: 1
+      Deepness2: 1
+      Form_power: 0.737
+      Form_size: 1.00548
+      RefrectionRate: 8.46
+      StepPower: 11.4
+      Vector1_12042210: 1
+      Vector1_2E4A7B07: 0.32
+      Vector1_39CFB3E0: 2.71
+      Vector1_9316CEF7: 1.86
+      Vector1_C7431636: 0.919
+      Vector1_E793257C: 0.926
+      Vector1_F2C3C35D: 0.0187
+      Vector1_FO: 1
+      Vector1_SWS: 5
+      Vector1_WaveSpeed: -0.2
+      _AlphaClip: 0
+      _Blend: 0
+      _BumpScale: 1
+      _Cull: 2
+      _Cutoff: 0.5
+      _DstBlend: 0
+      _EnvironmentReflections: 1
+      _Float: 1
+      _GlossMapScale: 0
+      _Glossiness: 0
+      _GlossyReflections: 0
+      _Metallic: 0
+      _OcclusionStrength: 1
+      _QueueControl: 0
+      _QueueOffset: 0
+      _RECEIVE_SHADOWS_OFF: 1
+      _ReceiveShadows: 1
+      _Smoothness: 0.5
+      _SmoothnessTextureChannel: 0
+      _SpecularHighlights: 1
+      _SrcBlend: 1
+      _Surface: 0
+      _WorkflowMode: 1
+      _ZWrite: 1
+      alpha: 1
+      alpha_1: 0.464
+      bokasi: 1
+      cubemap_power: 0.43
+      dist_power: -0.49
+      dist_power_1: 0.06
+      distotion: 0.11
+      gradationX: 4.01
+      gradationY: 2.3
+      material_alpha: 0
+      normal2_power: 0.5
+      normal2_rot: 2.68
+      normal_power: -1
+      normal_rot: -2.86
+      ref_alpha: 1
+      ref_dist_power: 0.1
+      ref_dist_power_1: -0.09
+      ref_rot: 2.45
+      rot: 3.13
+      scrollspeed: 0.91
+      sky_alpha: 0
+      sky_rot: 0
+      smoothness: 0.804
+      tiling: 0.23
+      wave_alpha: 1.604
+      wave_lit_alpha: 0.5
+    m_Colors:
+      Color_1: {r: 0, g: 0.29803917, b: 0.7264151, a: 1}
+      Color_2: {r: 0, g: 0.6976147, b: 1, a: 1}
+      Color_3E5FD01E: {r: 0, g: 0, b: 0, a: 1}
+      Color_41E84E0D: {r: 0, g: 0, b: 0, a: 1}
+      Color_B9BD89DA: {r: 0.35764506, g: 0.3768953, b: 0.4433962, a: 1}
+      Color_C2215314: {r: 0.7688679, g: 0.91918933, b: 1, a: 0}
+      Color_Foam: {r: 0.25349104, g: 1.823144, b: 2.828427, a: 0}
+      Form_Min_Max: {r: 0.2, g: 0.3, b: 0, a: 0}
+      Form_color: {r: 1, g: 1, b: 1, a: 1}
+      Form_tex_scale: {r: 1.75, g: -4.14, b: 0, a: 0}
+      Vector2_FMM: {r: 0.2, g: 0.2, b: 0, a: 0}
+      Vector3_169EBE7: {r: 0.94, g: 1.03, b: -1.01, a: 0}
+      _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      _Color: {r: 0.14117648, g: 0.14117648, b: 0.14117648, a: 1}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+      center: {r: 0.5, g: 0.5, b: 0, a: 0}
+      dist_scroll_speed: {r: -0.015, g: 0, b: 0, a: 0}
+      dist_scroll_speed_1: {r: 0, g: 0.1, b: 0, a: 0}
+      dist_tilling: {r: 0.41, g: 0.45, b: 0.15, a: 0}
+      dist_vec: {r: 0.03, g: 0.55, b: 0, a: 0}
+      dist_vec_1: {r: 0, g: 1, b: 0, a: 0}
+      dot_size: {r: 256, g: 256, b: 0, a: 0}
+      emission_color: {r: 0, g: 0, b: 0, a: 0}
+      gradationColorA: {r: 0.100124575, g: 0.22967473, b: 0.28301886, a: 1}
+      gradationColorB: {r: 0.27100387, g: 0.3147831, b: 0.39622638, a: 1}
+      lava_scroll_speed: {r: 0, g: 0, b: 0, a: 0}
+      lava_tilling: {r: 1, g: 1, b: 0, a: 0}
+      normal2_scroll_speed: {r: -0.002, g: 0.001, b: 0, a: 0}
+      normal2_tilling: {r: 0.2, g: 0.2, b: 0, a: 0}
+      normal_scroll_speed: {r: 0.02, g: -0.001, b: 0, a: 0}
+      normal_tilling: {r: 4.06, g: 1.38, b: 0, a: 0}
+      over_tilling: {r: 1, g: 1, b: 0, a: 0}
+      ref_center: {r: 0.35, g: 0.45, b: 0, a: 0}
+      ref_dist_scroll_speed: {r: -0.03, g: -0.03, b: 0, a: 0}
+      ref_dist_scroll_speed_1: {r: 0.03, g: 0, b: 0, a: 0}
+      ref_dist_tilling: {r: 2, g: 2, b: 0, a: 0}
+      ref_dist_tilling_1: {r: 1, g: 1, b: 0, a: 0}
+      ref_dist_vec: {r: 0.57, g: 1, b: 0, a: 0}
+      ref_dist_vec_1: {r: 0.5, g: 0.5, b: 0, a: 0}
+      ref_offset: {r: -0.05, g: 0.54, b: 0, a: 0}
+      ref_scroll_speed: {r: -0, g: 0, b: 0, a: 0}
+      ref_tilling: {r: 0.54, g: 0.77, b: 0, a: 0}
+      sky_scroll_speed: {r: 0, g: 0, b: 0, a: 0}
+      sky_tiling: {r: 1, g: 1, b: 0, a: 0}
+      wave_offset: {r: -0.005, g: -0.01, b: 0, a: 0}
+  m_BuildTextureStacks: []

@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: e31out_waterM
+  m_Shader: {fileID: 4800000, guid: 221ec0a605ce32a4193413055200be92, type: 3}
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      Cubemap:
+        m_Texture: {fileID: 8900000, guid: ed6d91a7586e7624fb373d4c8e1421cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      Form_tex:
+        m_Texture: {fileID: 2800000, guid: a5028746c78bee7438fcde8f3ab35a70, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      dist_tex:
+        m_Texture: {fileID: 2800000, guid: 332a577520f74af48805dec4ffbbbc7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal:
+        m_Texture: {fileID: 2800000, guid: 02f706ad79b76bc49975a1306d79af23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal2:
+        m_Texture: {fileID: 2800000, guid: 3338bfac50fb9524696c601eb30e15bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      Cubemap_power: 0
+      Deepness: 1
+      Distance: 1
+      Float_1: 1
+      Foam_Min_Max: 4
+      Foam_Opacity: 0.3
+      Form_power: 0
+      Form_size: 0.54
+      RefrectionRate: 0
+      Smoothness: 1
+      StepPower: 1
+      Vector1_1: 0
+      Vector1_10: 0
+      Vector1_11: 0
+      Vector1_12: 0
+      Vector1_13: 0
+      Vector1_14: 0
+      Vector1_15: 0
+      Vector1_16: 0
+      Vector1_17: 0
+      Vector1_18: 0
+      Vector1_19: 0
+      Vector1_2: 0
+      Vector1_20: 0
+      Vector1_21: 0
+      Vector1_22: 0
+      Vector1_23: 0
+      Vector1_24: 0
+      Vector1_25: 0
+      Vector1_26: 0
+      Vector1_27: 0
+      Vector1_28: 0
+      Vector1_29: 0
+      Vector1_2E4A7B07: 0
+      Vector1_3: 0
+      Vector1_30: 0
+      Vector1_31: 0
+      Vector1_32: 0
+      Vector1_33: 0
+      Vector1_39CFB3E0: 15
+      Vector1_3b924185c2b44378aa468af7e63e38d5: 0
+      Vector1_4: 0
+      Vector1_5: 0
+      Vector1_6: 0
+      Vector1_7: 0
+      Vector1_8: 0
+      Vector1_81f327109a0a4a56b862fbbe14c12f1c: 0
+      Vector1_9: 0
+      Vector1_9316CEF7: 2.44
+      Vector1_A0048D58: 0
+      Vector1_C7431636: 1
+      Vector1_E793257C: 0.8
+      Vector1_F2C3C35D: 0.1
+      Vector1_FO: 0
+      Vector1_SWS: 5
+      Vector1_WaveSpeed: 2.51
+      Wave_Height: 2.5
+      _CubemapRate: 0.039
+      _Cubemap_nml_power: 0.02
+      _Deepness1: -58.37
+      _Deepness2: 31.7
+      _Float: 0.45
+      _Form_Rate: 0
+      _Form_contrast: 3
+      _QueueControl: 0
+      _QueueOffset: 0
+      _RECEIVE_SHADOWS_OFF: 1
+      _gradation_Rate: 1
+      _gradation_blend_type: 0
+      alpha: 1
+      alpha_1: 0.6
+      dist_power: 0
+      edge: 1
+      egg: 10
+      gradationX: -1.46
+      gradationY: -5.53
+      normal2_power: 0.4
+      normal2_rot: -38
+      normal_power: -0.85
+      normal_rot: 10
+      ref_dist_power: 0.01
+      rot: 0
+      sky_alpha: 0
+      sky_rot: 0
+      smoothness: 0.6
+      test_depth: 0
+      under_water_big_scale: 300
+      under_water_small_scale: 400
+      water: 5
+      wave_alpha: 0
+      wave_lit_alpha: 0
+      white_wave_scall: 50
+      white_wave_scall_1: 50
+    m_Colors:
+      Color_3E5FD01E: {r: 0.39021894, g: 0.55674577, b: 0.745283, a: 1}
+      Color_41E84E0D: {r: 0.6462264, g: 0.9893909, b: 1, a: 1}
+      Color_B9BD89DA: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+      Color_C2215314: {r: 0, g: 0, b: 0, a: 0}
+      Color_Foam: {r: 1, g: 1, b: 1, a: 0}
+      Color_bcd545670c3e4f0fac4cfb90209b40ea: {r: 0.03404237, g: 0.10576417, b: 0.42452827, a: 0}
+      Color_bcd545670c3e4f0fac4cfb90209b40ea_1: {r: 0.30081877, g: 0.6632298, b: 0.9811321, a: 0}
+      Color_bcd545670c3e4f0fac4cfb90209b40ea_2: {r: 0, g: 0.01243169, b: 0.5660378, a: 0}
+      Color_bcd545670c3e4f0fac4cfb90209b40ea_3: {r: 0, g: 0.9315581, b: 1, a: 0}
+      DL: {r: 0, g: 1, b: 0.06, a: 0}
+      Form_Min_Max: {r: 0.2, g: 0.3, b: 0, a: 0}
+      Form_color: {r: 1, g: 1, b: 1, a: 0}
+      Form_speed1: {r: 0.02, g: 0.06, b: 0, a: 0}
+      Form_speed2: {r: -0.02, g: 0.21, b: 0, a: 0}
+      Form_tex_scale: {r: 3.17, g: 1.45, b: 0, a: 0}
+      Main_color: {r: 0.22352937, g: 0.4943282, b: 0.772549, a: 0}
+      Specular_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+      Vector2: {r: 0, g: 0.05, b: 0, a: 0}
+      Vector2_1: {r: 0, g: 0.05, b: 0, a: 0}
+      Vector2_FMM: {r: 1, g: 1, b: 0, a: 0}
+      Vector2_f6a1a2e6d96e4e08ba4a10af24136013: {r: 0, g: 0, b: 0, a: 0}
+      Vector2_f6a1a2e6d96e4e08ba4a10af24136013_1: {r: 0, g: 0, b: 0, a: 0}
+      Vector3_169EBE7: {r: 0, g: 1, b: 0.05, a: 0}
+      Vector4: {r: 0, g: 0, b: 0, a: 0}
+      _Color: {r: 0, g: 0.5548802, b: 0.7254902, a: 1}
+      alpha: {r: 0, g: 0, b: 0, a: 0}
+      center: {r: 0.5, g: 0.5, b: 0, a: 0}
+      deep_water: {r: 0, g: 0, b: 0, a: 0}
+      dist_scroll_speed: {r: 0, g: 0, b: 0, a: 0}
+      dist_tilling: {r: 1, g: 1, b: 0, a: 0}
+      dist_vec: {r: 1, g: 1, b: 0, a: 0}
+      gradationColorA: {r: 0.25490198, g: 0.2901961, b: 0.4509804, a: 0}
+      gradationColorB: {r: 1, g: 1, b: 1, a: 0}
+      noise_acallA: {r: 69.3, g: 0, b: 0, a: 0}
+      noise_acallB: {r: 100, g: 0, b: 0, a: 0}
+      normal2_scroll_speed: {r: 0, g: 0.15, b: 0, a: 0}
+      normal2_tilling: {r: 1, g: 0.8, b: 0, a: 0}
+      normal_scroll_speed: {r: 0, g: 0.2, b: 0, a: 0}
+      normal_tilling: {r: 6, g: 2.5, b: 0, a: 0}
+      ref_dist_scroll_speed: {r: 0, g: 1.05, b: 0, a: 0}
+      ref_dist_tilling: {r: 40, g: 24, b: 0, a: 0}
+      ref_dist_vec: {r: 0, g: 0.5, b: 0, a: 0}
+      ref_offset: {r: 0, g: 0, b: 0, a: 0}
+      ref_tilling: {r: 1, g: 1, b: 0, a: 0}
+      ripple_speed: {r: 0, g: 0.45, b: 0, a: 0}
+      ripple_speed_02: {r: 0, g: 0.8, b: 0, a: 0}
+      shallow_water: {r: 0, g: 0, b: 0, a: 0}
+      sky_scroll_speed: {r: 0, g: 0, b: 0, a: 0}
+      sky_tiling: {r: 1, g: 1, b: 0, a: 0}
+      test_deep: {r: 0, g: 0, b: 0, a: 0}
+      test_shallow: {r: 0, g: 0, b: 0, a: 0}
+      under_color: {r: 0, g: 0.3978896, b: 0.5943396, a: 1}
+      under_water_big_speed: {r: 0, g: 0.1, b: 0, a: 0}
+      under_water_small_speed: {r: 0, g: 0.05, b: 0, a: 0}
+      water_scale: {r: 120, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []

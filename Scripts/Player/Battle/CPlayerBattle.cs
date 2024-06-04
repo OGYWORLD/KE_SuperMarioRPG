@@ -413,7 +413,14 @@ public class CPlayerBattle : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         // twinkle effect
-        itemParticle[curItem + 2].GetComponent<Transform>().position = btlManager.plrPos[(int)btlManager.whoUseMushroom] + new Vector3(0f, 0.5f, 0f);
+        if((btlManager.status % 10) == (int)EITEMS.MUSHROOM)
+        {
+            itemParticle[curItem + 2].GetComponent<Transform>().position = btlManager.plrPos[(int)btlManager.whoUseMushroom] + new Vector3(0f, 0.5f, 0f);
+        }
+        else
+        {
+            itemParticle[curItem + 2].GetComponent<Transform>().position = btlManager.plrPos[btlManager.curPlrTurn] + new Vector3(0f, 0.5f, 0f);
+        }
         itemParticle[curItem + 2].SetActive(true);
 
         yield return new WaitForSeconds(1.0f);
