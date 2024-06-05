@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m05_siranami_2
+  m_Shader: {fileID: 4800000, guid: 86c56b5a456612643866255e95d2d765, type: 3}
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _main_nml:
+        m_Texture: {fileID: 2800000, guid: 266231176817e7147aacb6d12852ebfd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _main_tex:
+        m_Texture: {fileID: 2800000, guid: 5424c906c07bd6941b0b4431e5812333, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      dist_tex:
+        m_Texture: {fileID: 2800000, guid: ff9ea0106a689f04aba018d6cf1c2a56, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal:
+        m_Texture: {fileID: 2800000, guid: 02f706ad79b76bc49975a1306d79af23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      normal2:
+        m_Texture: {fileID: 2800000, guid: 3338bfac50fb9524696c601eb30e15bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _AlphaClip: 0
+      _Blend: 2
+      _BumpScale: 1
+      _CastShadows: 1
+      _ClearCoatMask: 0
+      _ClearCoatSmoothness: 0
+      _Cull: 2
+      _Cutoff: 0.5
+      _DetailAlbedoMapScale: 1
+      _DetailNormalMapScale: 1
+      _DstBlend: 1
+      _EnvironmentReflections: 1
+      _GlossMapScale: 1
+      _Glossiness: 0
+      _GlossyReflections: 1
+      _Metallic: 0
+      _Mode: 0
+      _OcclusionStrength: 1
+      _Parallax: 0.02
+      _QueueControl: 0
+      _QueueOffset: 0
+      _ReceiveShadows: 0
+      _Smoothness: 0.5
+      _SmoothnessTextureChannel: 0
+      _SpecularHighlights: 1
+      _SrcBlend: 5
+      _Surface: 1
+      _UVSec: 0
+      _WorkflowMode: 1
+      _ZTest: 4
+      _ZWrite: 0
+      _ZWriteControl: 0
+      _nami_nml_power: 1
+      alpha_1: 0.617
+      normal2_power: 0.3
+      normal2_rot: -69
+      normal_power: 1
+      normal_rot: 18
+      ref_dist_power: 0.15
+      smoothness: 0.755
+    m_Colors:
+      _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _Color_add: {r: 0.21176466, g: 0.6901961, b: 0.9529411, a: 1}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+      _nami2_offset: {r: -0.55, g: 0.17, b: 0, a: 0}
+      _nami2_speed: {r: 0.12, g: 0.035, b: 0, a: 0}
+      _nami2_tilling: {r: 1.5, g: 0.72, b: 0, a: 0}
+      _nami_speed: {r: 0.12, g: -0.024, b: 0, a: 0}
+      _nami_tilling: {r: 1.557, g: 1.76, b: 0, a: 0}
+      normal2_scroll_speed: {r: -0.08, g: 0, b: 0, a: 0}
+      normal2_tilling: {r: 1.16, g: 4.82, b: 0, a: 0}
+      normal_scroll_speed: {r: -0.1, g: 0, b: 0, a: 0}
+      normal_tilling: {r: 2.5, g: 14.95, b: 0, a: 0}
+      ref_dist_scroll_speed: {r: 0.03, g: 0.01, b: 0, a: 0}
+      ref_dist_tilling: {r: 2, g: 2.28, b: 0, a: 0}
+      ref_dist_vec: {r: -1.26, g: 0.16, b: 0, a: 0}
+  m_BuildTextureStacks: []
