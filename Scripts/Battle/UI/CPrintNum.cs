@@ -35,6 +35,11 @@ public class CPrintNum : MonoBehaviour
         StartCoroutine(SetNumObj(_n, _p));
     }
 
+    public void PrintRockCandy()
+    {
+        StartCoroutine(PrintRockCandyNum());
+    }
+
     IEnumerator SetNumObj(int _n, int _p)
     {
         string num = _n.ToString();
@@ -69,6 +74,26 @@ public class CPrintNum : MonoBehaviour
             damageNumbers_1[num[0] - 48].SetActive(false);
             damageNumbers_2[num[1] - 48].SetActive(false);
         }
+
+        background.SetActive(false);
+    }
+
+    IEnumerator PrintRockCandyNum()
+    {
+        background.GetComponent<Transform>().position = backgroundPos[0] + new Vector3(300f, 0f, 0f); ;
+
+        damageNumbers_1[9].GetComponent<Transform>().position = backgroundPos[0] + new Vector3(285f, 0f, 0f);
+        damageNumbers_1[9].SetActive(true);
+
+        damageNumbers_2[9].GetComponent<Transform>().position = backgroundPos[0] + new Vector3(325f, 0f, 0f);
+        damageNumbers_2[9].SetActive(true);
+
+        background.SetActive(true);
+
+        yield return new WaitForSeconds(1.0f);
+
+        damageNumbers_1[9].SetActive(false);
+        damageNumbers_2[9].SetActive(false);
 
         background.SetActive(false);
     }

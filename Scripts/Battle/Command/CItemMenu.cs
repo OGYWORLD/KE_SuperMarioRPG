@@ -253,8 +253,6 @@ public class CItemMenu : MonoBehaviour
 
         isEmpty = true;
 
-        btlManager.whoUseMushroom = EMEMBER.MARIO;
-
         SetList();
         if(hasItem.Count == 2)
         {

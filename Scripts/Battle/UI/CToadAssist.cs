@@ -21,15 +21,35 @@ public class CToadAssist : MonoBehaviour
     public GameObject toad = null;
     private int toadItmIdx = 0;
 
+    // item info box
+    public GameObject itemInfo = null;
+    public Text itemInfoTxt = null;
+    private Dictionary<int, string> itemInfoString = new Dictionary<int, string>();
+
+    // particle (0: rock candy, 1: mushroom, 2: flower)
+    public GameObject[] particles = new GameObject[3];
+
     // To Coroutine
     private bool isJump = false;
+    private bool isParticleEnd = false;
+
+    // To Monster Atk Motion (rock candy)
+    public CMstControl monApr = null;
+    public CPrintNum printNum = null;
+
+    // HPBar
+    public Image[] HPBar = new Image[2];
 
     void Start()
     {
-        GameManager.instance.gauge = 100; // !!!!!!!! For DEBUG !!! delete plz
         animator = GetComponent<Animator>();
         boxTrans = Box.GetComponent<Transform>();
         boxAnim = Box.GetComponent<Animator>();
+
+        // set item info text
+        itemInfoString[0] = "º°»çÅÁ";
+        itemInfoString[1] = "ÆÄ¿öÇ® ¹ö¼¸";
+        itemInfoString[2] = "ÇÃ¶ó¿ö ¿¢±â½º";
     }
 
     // Update is called once per frame
@@ -39,6 +59,7 @@ public class CToadAssist : MonoBehaviour
 
         ShowBox();
         BoxAnimation();
+        ShowParticle();
 
         // hide when monster attack, win, loose
         if (btlManager.status != 0 && btlManager.status != 6 && btlManager.status != 7)
@@ -91,24 +112,12 @@ public class CToadAssist : MonoBehaviour
         if(btlManager.status == 10)
         {
             Box.SetActive(true);
+            toad.SetActive(true);
             StartCoroutine(BoxMotion());
         }
-        else if(btlManager.status == 11) // rock candy
-        {
-
-        }
-        else if (btlManager.status == 12) // mushroom
-        {
-
-        }
-        else if (btlManager.status == 13) // flower essence
-        {
-
-        }
-        else
+        else // Init
         {
             boxTrans.position = new Vector3(0.2f, 4f, 3.5f);
-            cloudParticle.SetActive(false);
             btlManager.jumpCount = 0;
         }
     }
@@ -127,6 +136,99 @@ public class CToadAssist : MonoBehaviour
             boxAnim.SetInteger("JumpState", 2);
             StartCoroutine(WaitClosedBox());
         }
+    }
+
+    void ShowParticle()
+    {
+        if (btlManager.status == 12 && !isParticleEnd)
+        {
+            isParticleEnd = true;
+            StartCoroutine(UpdateInfo());
+        }
+    }
+
+    void EndParticle()
+    {
+        isParticleEnd = false;
+        btlManager.status = 0; // hide Command Menu
+        btlManager.curTurn = 1; // set Status to 0 Cuz next turn is Monster Turn
+        if(btlManager.curPlrTurn == 0) // pass player turn
+        {
+            btlManager.curPlrTurn = 1;
+        }
+        else
+        {
+            btlManager.curPlrTurn = 0;
+        }
+    }
+
+    void MonsterHPCheck(int _p)
+    {
+        int dam = btlManager.monsterHp[_p] - 99;
+        if (dam < 0)
+        {
+            dam = 0;
+        }
+        btlManager.monsterHp[_p] = dam; // Upadate Monster Hp
+    }
+
+    IEnumerator UpdateInfo()
+    {
+        particles[toadItmIdx].SetActive(true);
+
+        yield return new WaitForSeconds(2.0f);
+
+        if(toadItmIdx == 0) // rock candy
+        {
+            printNum.PrintRockCandy(); // Print Damage Num
+
+            if(!btlManager.isLeftMstDead)
+            {
+                monApr.ShowRockCandyAttack(0); // Monster Attacked animation
+                MonsterHPCheck(0);
+            }
+            if (!btlManager.isRightMstDead)
+            {
+                monApr.ShowRockCandyAttack(1); // Monster Attacked animation
+                MonsterHPCheck(1);
+            }
+
+            yield return new WaitForSeconds(0.3f);
+        }
+        else if (toadItmIdx == 1) // mushroom
+        {
+            if(!btlManager.isMarioDead)
+            {
+                StartCoroutine(UpdateBarAnim((int)EMEMBER.MARIO));
+                GameManager.instance.members[(int)EMEMBER.MARIO].m_curhp = GameManager.instance.members[(int)EMEMBER.MARIO].m_maxhp;
+            }
+            if(!btlManager.isMellowDead)
+            {
+                StartCoroutine(UpdateBarAnim((int)EMEMBER.MELLOW));
+                GameManager.instance.members[(int)EMEMBER.MELLOW].m_curhp = GameManager.instance.members[(int)EMEMBER.MELLOW].m_maxhp;
+            }
+        }
+        else if (toadItmIdx == 2) // flower essence
+        {
+            GameManager.instance.curFP = GameManager.instance.maxFP;
+        }
+
+        yield return new WaitForSeconds(0.8f);
+
+        monApr.SetMonState();
+        itemInfo.SetActive(false);
+        EndParticle();
+    }
+
+    IEnumerator UpdateBarAnim(int _w)
+    {
+        for (int i = 0; i < GameManager.instance.members[_w].m_maxhp; i++)
+        {
+            HPBar[_w].fillAmount += 1f / (float)GameManager.instance.members[_w].m_maxhp;
+            yield return new WaitForSeconds(0.005f);
+        }
+
+        yield break;
     }
 
     IEnumerator ShowItmes()
@@ -156,9 +258,20 @@ public class CToadAssist : MonoBehaviour
         btlManager.jumpCount = 3;
         boxAnim.SetInteger("JumpState", 3);
         toadItems[toadItmIdx].SetActive(false);
-        btlManager.status = 11 + toadItmIdx; // change btl Status
+
+        btlManager.status = 11; // change btl Status
+
         Box.SetActive(false);
         cloudParticle.SetActive(true);
+
+        itemInfoTxt.text = itemInfoString[toadItmIdx];
+        itemInfo.SetActive(true);
+
+        yield return new WaitForSeconds(1.0f);
+
+        cloudParticle.SetActive(false);
+        btlManager.status = 12;
+        toad.SetActive(false);
     }
 
     IEnumerator ResetGauge()

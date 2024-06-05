@@ -430,6 +430,9 @@ public class CPlayerBattle : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         useItemUpdate();
+
+        yield return new WaitForSeconds(0.5f);
+
         EndAttck();
         animator.SetInteger("status", btlManager.status);
         itemParticle[0].SetActive(false);
@@ -441,13 +444,13 @@ public class CPlayerBattle : MonoBehaviour
     {
         if(btlManager.status == 50) // Mushroom
         {
+            StartCoroutine(UpdateBarAnim(30));
+
             GameManager.instance.members[(int)btlManager.whoUseMushroom].m_curhp += 30;
             if(GameManager.instance.members[(int)btlManager.whoUseMushroom].m_curhp > GameManager.instance.members[(int)btlManager.whoUseMushroom].m_maxhp)
             {
                 GameManager.instance.members[(int)btlManager.whoUseMushroom].m_curhp = GameManager.instance.members[(int)btlManager.whoUseMushroom].m_maxhp;
             }
-
-            UpdateHPBar(30);
         }
         else if(btlManager.status == 51) // Honey Syrup
         {
@@ -459,11 +462,16 @@ public class CPlayerBattle : MonoBehaviour
         }
     }
 
-    void UpdateHPBar(int _n)
+    IEnumerator UpdateBarAnim(int _n)
     {
-        for(int i = 0; i < _n; i++)
+        for (int i = 0; i < _n; i++)
         {
-            HPBar[btlManager.curPlrTurn].fillAmount += (float)GameManager.instance.members[btlManager.curPlrTurn].m_maxhp / 100f;
+            HPBar[(int)btlManager.whoUseMushroom].fillAmount += 1f / (float)GameManager.instance.members[(int)btlManager.whoUseMushroom].m_maxhp;
+            yield return new WaitForSeconds(0.005f);
         }
+
+        btlManager.whoUseMushroom = EMEMBER.MARIO;
+
+        yield break;
     }
 }

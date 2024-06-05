@@ -44,6 +44,7 @@ public class CFadeOut : MonoBehaviour
         else if (isLevelUp)
         {
             // LevelUp Scene
+            SceneManager.LoadScene("e47in");
         }
         else
         {

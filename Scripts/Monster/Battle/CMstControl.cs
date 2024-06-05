@@ -55,7 +55,7 @@ public class CMstControl : MonoBehaviour
     // Combo Gauge
     public CComboGauge combo = null;
 
-    void Awake()
+    void Start()
     {
         // Set Monster Fin(Default) Pos
         string monster = GameManager.instance.btlMoster;
@@ -151,6 +151,13 @@ public class CMstControl : MonoBehaviour
         isTiming = true;
         isAttack = true;
         StartCoroutine(AttackMotion(btlManager.curMstTurn, attackTo));
+    }
+
+    // Call from CToadAssist
+    public void ShowRockCandyAttack(int _p)
+    {
+        animator[_p].SetBool("isAttacked", true);
+        attackedParticle[_p].SetActive(true);
     }
 
     // Call from CPlayerBattle

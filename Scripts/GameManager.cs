@@ -212,7 +212,8 @@ public class GameManager : MonoBehaviour
             new magicAttackInfo("점프", 3, 25),
             new magicAttackInfo("파이어볼", 5, 20)
         };
-        members[(int)EMEMBER.MARIO] = new CharacterInfo("마리오", 1, 20, 20, 0, EXPNeeded[0], 0, marioInitStat, marioMagicAttack, 0, 0);
+        // !!!!!!!!! FOR DEBUG !!!!!!! origin exp is 0
+        members[(int)EMEMBER.MARIO] = new CharacterInfo("마리오", 1, 20, 20, 50, EXPNeeded[0], 0, marioInitStat, marioMagicAttack, 0, 0);
 
         // Make Mellow Info
         Stats mellowInitStat = new Stats(22, 3, 18, 15, 10);
@@ -221,7 +222,8 @@ public class GameManager : MonoBehaviour
             new magicAttackInfo("번개찌리릿", 2, 15),
             new magicAttackInfo("무슨 생각하니", 1, 0)
         };
-        members[(int)EMEMBER.MELLOW] = new CharacterInfo("멜로", 2, 20, 20, 0, EXPNeeded[1], 0, mellowInitStat, mellowMagicAttack, 0, 0);
+        // !!!!!!!!! FOR DEBUG !!!!!!! origin exp is 0
+        members[(int)EMEMBER.MELLOW] = new CharacterInfo("멜로", 2, 20, 20, 50, EXPNeeded[1], 0, mellowInitStat, mellowMagicAttack, 0, 0);
 
         // Set InOutPosIndex
         chgStage = new Dictionary<string, int>();
@@ -245,7 +247,7 @@ public class GameManager : MonoBehaviour
 
         // Monster Info in Battle
         monStats = new Dictionary<string, MonStats>();
-        monStats["goomba"] = new MonStats(100, 1, 1, 1); // !!! FOR DEBUG !!! origin hp is 3, origin attak is 16
+        monStats["goomba"] = new MonStats(3, 16, 1, 1);
         monStats["nokonoko"] = new MonStats(10, 4, 1, 1);
         monStats["splikey"] = new MonStats(20, 5, 1, 2);
         monStats["hammerBro"] = new MonStats(50, 3, 3, 10);
