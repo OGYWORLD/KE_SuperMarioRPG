@@ -36,6 +36,9 @@ public class CBattleManager : MonoBehaviour
     // Who Use a Mushroom Item
     public EMEMBER whoUseMushroom { get; set; } = EMEMBER.MARIO;
 
+    // Toad Assist Jump Count
+    public int jumpCount { get; set; } = 0;
+
     void Start()
     {
         if(GameManager.instance.memberIndex == EMEMBER.MARIO)

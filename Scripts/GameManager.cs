@@ -29,7 +29,6 @@ public enum EITEMS
 public enum ETOADASSIST
 {
     ROCK_CANDY, // All of them, Damage 200
-    EGG_SHELL, // Protect 1
     FLOWER_ESSENCE, // Restores FP
     POWER_MUSHROOM // Restores HP
 }

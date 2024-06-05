@@ -66,7 +66,11 @@ public class CComboGauge : MonoBehaviour
 
     void SetGaugeFillAmount()
     {
-        gaugeImage.fillAmount = GameManager.instance.gauge * 0.01f;
+        // Do Not Update When Default Menu State
+        if(btlManager.status != 1)
+        {
+            gaugeImage.fillAmount = GameManager.instance.gauge * 0.01f;
+        }
     }
 
     void ShowFullEff()

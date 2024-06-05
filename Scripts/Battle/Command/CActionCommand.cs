@@ -49,6 +49,11 @@ public class CActionCommand : MonoBehaviour
             // Init status
             TurnBack();
         }
+        // Toad Assist
+        if(btlManager.status == 10)
+        {
+            HideMonsterCursor();
+        }
         // 6: Win, 7: Loose, 8: Run
         if (btlManager.status == 6 || btlManager.status == 7 || btlManager.status == 8)
         {
@@ -151,28 +156,28 @@ public class CActionCommand : MonoBehaviour
     void MovingCursor()
     {
         // if Dead Someone
-        if ((btlManager.status == 2 || btlManager.status >= 300)&& btlManager.isRightMstDead && !btlManager.isLeftMstDead)
+        if ((btlManager.status == 2 || btlManager.status >= 400) && btlManager.isRightMstDead && !btlManager.isLeftMstDead)
         {
             fingerTrans.position = new Vector2(783f, 654f);
             btlManager.curAttack = 0;
             leftMstName.SetActive(true);
             rightMstName.SetActive(false);
         }
-        else if((btlManager.status == 2 || btlManager.status >= 300) && btlManager.isLeftMstDead && !btlManager.isRightMstDead)
+        else if((btlManager.status == 2 || btlManager.status >= 400) && btlManager.isLeftMstDead && !btlManager.isRightMstDead)
         {
             fingerTrans.position = new Vector2(1287f, 604f);
             btlManager.curAttack = 1;
             leftMstName.SetActive(false);
             rightMstName.SetActive(true);
         }
-        else if ((btlManager.status == 2 || btlManager.status >= 300) && Input.GetKeyDown(KeyCode.RightArrow))
+        else if ((btlManager.status == 2 || btlManager.status >= 400) && Input.GetKeyDown(KeyCode.RightArrow))
         {
             btlManager.curAttack = 1;
             fingerTrans.position = new Vector2(1287f, 604f);
             leftMstName.SetActive(false);
             rightMstName.SetActive(true);
         }
-        else if ((btlManager.status == 2 || btlManager.status >= 300) && Input.GetKeyDown(KeyCode.LeftArrow))
+        else if ((btlManager.status == 2 || btlManager.status >= 400) && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             btlManager.curAttack = 0;
             fingerTrans.position = new Vector2(783f, 654f);

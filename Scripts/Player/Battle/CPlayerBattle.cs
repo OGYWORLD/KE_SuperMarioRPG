@@ -64,7 +64,7 @@ public class CPlayerBattle : MonoBehaviour
         {
             MainMenuTurn();
         }
-        if (btlManager.status >= 20 && btlManager.status < 30 && btlManager.curTurn == 0 && btlManager.curPlrTurn == playerValues.Me)
+        if (btlManager.status >= 20 && btlManager.status < 30 && btlManager.curTurn == 0 && btlManager.curPlrTurn == playerValues.Me) // Default Attack
         {
             AttackTurn();
             if (!btlManager.isAttacked)
@@ -72,7 +72,7 @@ public class CPlayerBattle : MonoBehaviour
                 Attack();
             }
         }
-        if (btlManager.status >= 40 && btlManager.status < 50 && btlManager.curTurn == 0 && btlManager.curPlrTurn == playerValues.Me)
+        if (btlManager.status >= 40 && btlManager.status < 50 && btlManager.curTurn == 0 && btlManager.curPlrTurn == playerValues.Me) // magic Attack
         {
             AttackTurn();
             if (!btlManager.isAttacked)
@@ -87,6 +87,10 @@ public class CPlayerBattle : MonoBehaviour
             {
                 UseItem();
             }
+        }
+        if (btlManager.status == 10) // Toad Assist
+        {
+            AttackTurn();
         }
 
         // Win!
