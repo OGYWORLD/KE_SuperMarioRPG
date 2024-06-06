@@ -5,12 +5,10 @@ using UnityEngine;
 public class CLUPlayer : MonoBehaviour
 {
     public CPlayerValue playerValues = null;
-    public CLevelUpManager luManager = null;
 
     private Animator animator = null;
 
-    // To Check Coroutine
-    private bool isSrt = false;
+    public bool isSrt { get; set; } = false;
 
     void Start()
     {
@@ -22,32 +20,33 @@ public class CLUPlayer : MonoBehaviour
         if(!isSrt)
         {
             isSrt = true;
-            StartCoroutine(DelayStart());
+            StartCoroutine(DanceMotion());
         }
     }
 
     void SetLUAnim()
     {
+        animator.SetBool("isCB", false);
         animator.SetBool("isLU", true);
     }
 
     void SetCBAnim()
     {
+        animator.SetBool("isLU", false);
         animator.SetBool("isCB", true);
     }
 
-    void InitAnim()
+    IEnumerator DanceMotion()
     {
-        animator.SetBool("isLU", false);
-        animator.SetBool("isCB", false);
-    }
+        if (CLevelUpManager.lu.curLevelUp != playerValues.Me)
+        {
+            animator.SetBool("isLU", false);
+        }
 
-    IEnumerator DelayStart()
-    {
         // wait Light set
         yield return new WaitForSeconds(1.0f);
 
-        if (luManager.curLevelUp == playerValues.Me)
+        if (CLevelUpManager.lu.curLevelUp == playerValues.Me)
         {
             SetLUAnim();
 
@@ -60,6 +59,6 @@ public class CLUPlayer : MonoBehaviour
             SetCBAnim();
         }
 
-        luManager.status = 1;
+        CLevelUpManager.lu.status = 1;
     }
 }

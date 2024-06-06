@@ -136,7 +136,7 @@ public class CMstControl : MonoBehaviour
     // Reset Monster Position
     void ResetPos()
     {
-        mstTrans[(int)EMONSTER.LEFT].position = Vector3.Lerp(mstTrans[(int)EMONSTER.LEFT].position, mstFinPos[(int)EMONSTER.LEFT], Time.deltaTime * fowardSpeed);
+        mstTrans[(int)EMONSTER.LEFT].position = Vector3.Lerp(mstTrans[(int)EMONSTER.LEFT].position, mstFinPos[(int)EMONSTER.LEFT], Time.deltaTime * fowardSpeed); 
         mstTrans[(int)EMONSTER.RIGHT].position = Vector3.Lerp(mstTrans[(int)EMONSTER.RIGHT].position, mstFinPos[(int)EMONSTER.RIGHT], Time.deltaTime * fowardSpeed);
     }
 
@@ -249,7 +249,7 @@ public class CMstControl : MonoBehaviour
     IEnumerator showDead(int _p)
     {
         animator[_p].SetBool("isDead", true);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         mstObj[_p].SetActive(false);
         deadParticle[_p].SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -291,7 +291,7 @@ public class CMstControl : MonoBehaviour
             printNum.PrintNum(GameManager.instance.monStats[GameManager.instance.btlMoster].m_atk, (int)_m + 2); // print Damage Num
             player[(int)_m].ShowHitAnim();
 
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
         }
 
         yield return new WaitForSeconds(0.3f);

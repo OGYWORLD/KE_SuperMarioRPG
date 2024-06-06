@@ -43,6 +43,9 @@ public class CPlayerBattle : MonoBehaviour
 
     void Start()
     {
+        // HpBar Setting
+        HPBar[playerValues.Me].fillAmount += (1f / (float)GameManager.instance.members[playerValues.Me].m_maxhp) * (float)GameManager.instance.members[playerValues.Me].m_curhp;
+
         monPos = new Vector3[2];
         monPos[0] = playerValues.monPos[0];
         monPos[1] = playerValues.monPos[1];
@@ -189,6 +192,8 @@ public class CPlayerBattle : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         isTiming = false;
 
+        monApr.SetMonState(); // End Monster Attacked animation
+
         if (isScAtkCmd)
         {
             printNum.PrintNum(GameManager.instance.members[btlManager.curPlrTurn].m_stat.m_attak * 2, btlManager.curAttack); // print Damage Num
@@ -213,7 +218,7 @@ public class CPlayerBattle : MonoBehaviour
         EndAttck();
         animator.SetInteger("status", btlManager.status);
         animator.SetBool("isAtk", false);
-        monApr.SetMonState(); // End Monster Attacked animation
+        //monApr.SetMonState(); // End Monster Attacked animation
     }
     public void CheckActionCommand()
     {
@@ -266,7 +271,7 @@ public class CPlayerBattle : MonoBehaviour
         {
             btlManager.monsterHp[btlManager.curAttack] -= GameManager.instance.members[btlManager.curPlrTurn].m_stat.m_attak * _mult; // Upadate Monster Hp
         }
-        else if (btlManager.status / 10 == 3) // Magic Attack
+        else if (btlManager.status / 10 == 4) // Magic Attack
         {
             btlManager.monsterHp[btlManager.curAttack] -= GameManager.instance.members[btlManager.curPlrTurn].m_magicAttack[btlManager.status % 10].m_attack * _mult; // Upadate Monster Hp
         }
@@ -323,6 +328,7 @@ public class CPlayerBattle : MonoBehaviour
 
     IEnumerator MagicAttackMotion(float _t)
     {
+        Debug.Log(btlManager.status);
         animator.SetInteger("status", btlManager.status);
 
         MagicAttackIntro();

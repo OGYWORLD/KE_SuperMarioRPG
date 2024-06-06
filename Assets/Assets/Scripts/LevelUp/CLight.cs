@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CLight : MonoBehaviour
 {
-    public CLevelUpManager luManager = null;
-
     private Vector3[] lightPos = new Vector3[2];
 
     private Animator animator = null;
@@ -25,7 +23,18 @@ public class CLight : MonoBehaviour
 
     void SetLight()
     {
-        // Set Light to Current LevelUp Character
-        gameObject.GetComponent<Transform>().position = lightPos[luManager.curLevelUp];
+        if(CLevelUpManager.lu.status == 4)
+        {
+            animator.SetBool("e47spotlight", false);
+            StartCoroutine(ChangeLight());
+        }
+    }
+
+    IEnumerator ChangeLight()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        gameObject.GetComponent<Transform>().position = lightPos[CLevelUpManager.lu.curLevelUp];
+        animator.SetBool("e47spotlight", true);
     }
 }

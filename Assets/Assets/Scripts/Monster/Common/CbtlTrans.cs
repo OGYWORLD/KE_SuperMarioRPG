@@ -36,29 +36,32 @@ public class CbtlTrans : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        move.runSpeed = 0f;
-        move.walkSpeed = 0f;
-        animator.speed = 0;
-        marioMove.isTouched = true;
+        if(other.gameObject.CompareTag("Player"))
+        {
+            move.rcValues.runSpeed = 0f;
+            move.rcValues.walkSpeed = 0f;
+            animator.speed = 0;
+            marioMove.isTouched = true;
 
-        Scene curScene = SceneManager.GetActiveScene();
+            Scene curScene = SceneManager.GetActiveScene();
 
-        GameManager.instance.beforeSceneName = curScene.name;
+            GameManager.instance.beforeSceneName = curScene.name;
 
-        GameManager.instance.curMarioPos = new Pos(mario.transform.position.x, mario.transform.position.y, mario.transform.position.z);
+            GameManager.instance.curMarioPos = new Vector3(mario.transform.position.x, mario.transform.position.y, mario.transform.position.z);
 
-        GameManager.instance.monsterAtv.Add(gameObject.name);
+            GameManager.instance.monsterAtv.Add(gameObject.name);
 
-        GameManager.instance.btlMoster = Regex.Replace(gameObject.name, @"[0-9]", "");
+            GameManager.instance.btlMoster = Regex.Replace(gameObject.name, @"[0-9]", "");
 
-        GameManager.instance.isNowBattle = true;
+            GameManager.instance.isNowBattle = true;
 
-        StartCoroutine(ChangeScene());
+            StartCoroutine(ChangeScene());
+        }
     }
 
     void CameraMoving()
     {
-        marioCamera.orthographicSize = Mathf.Lerp(marioCamera.orthographicSize, marioCamera.orthographicSize - 0.2f, Time.deltaTime / 0.1f);
+        marioCamera.orthographicSize = Mathf.Lerp(marioCamera.orthographicSize, marioCamera.orthographicSize - 0.1f, 0.03f);
     }
 
     IEnumerator ChangeScene()
@@ -67,6 +70,6 @@ public class CbtlTrans : MonoBehaviour
         battleTrans.SetActive(true);
 
         yield return new WaitForSeconds(0.6f);
-        SceneManager.LoadScene(2); // d02out btl
+        SceneManager.LoadScene("btld02a"); // d02out btl
     }
 }

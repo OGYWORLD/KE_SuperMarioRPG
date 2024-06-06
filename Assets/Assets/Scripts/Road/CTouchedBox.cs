@@ -32,6 +32,7 @@ public class CTouchedBox : MonoBehaviour
         {
             StartCoroutine(ShowCoin());
 
+            GameManager.instance.coin++;
             animator.SetTrigger("Touched");
             LeavesPuchBoxNum--;
             if (LeavesPuchBoxNum < 0)

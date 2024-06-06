@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CMonsterMove : MonoBehaviour, ISpecialMove
+public class CMonsterMove : MonoBehaviour
 {
+    public enum ECatched
+    {
+        NOTHING,
+        WALL,
+        MARIO
+    }
 
-    // About move
-    public float walkSpeed { get; set; } = 1.0f;
-    public float runSpeed { get; set; } = 5.0f;
-    public float rotationY { get; set; } = 90f;
+    public RayCastValues rcValues = null;
 
     // About Control animator State
     private Animator animator;
 
-    // CatchedMario
-    private CCatchedMario catched = null;
-
     void Awake()
     {
-        catched = gameObject.GetComponent<CCatchedMario>();
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -46,19 +45,19 @@ public class CMonsterMove : MonoBehaviour, ISpecialMove
 
     void GoombarMove()
     {
-        if (catched.isBeCatched() == ECatched.NOTHING)
+        if (isBeCatched() == ECatched.NOTHING)
         {
             animator.SetBool("Catched", false);
-            transform.position += transform.forward * walkSpeed * Time.deltaTime;
+            transform.position += transform.forward * rcValues.walkSpeed * Time.deltaTime;
         }
-        else if (catched.isBeCatched() == ECatched.WALL)
+        else if (isBeCatched() == ECatched.WALL)
         {
             animator.SetBool("Catched", false);
-            Quaternion TurnQuater = Quaternion.Euler(0.0f, rotationY, 0.0f);
+            Quaternion TurnQuater = Quaternion.Euler(0.0f, rcValues.turnAngle, 0.0f);
 
             transform.rotation *= TurnQuater;
         }
-        else if (catched.isBeCatched() == ECatched.MARIO)
+        else if (isBeCatched() == ECatched.MARIO)
         {
             animator.SetBool("Catched", true);
             specificMove();
@@ -68,6 +67,28 @@ public class CMonsterMove : MonoBehaviour, ISpecialMove
 
     public void specificMove()
     {
-        transform.position += transform.forward * runSpeed * Time.deltaTime;
+        transform.position += transform.forward * rcValues.runSpeed * Time.deltaTime;
+    }
+
+    public ECatched isBeCatched()
+    {
+        Vector3 HalfPos = transform.position + new Vector3(0.0f, rcValues.halfPosY, 0.0f);
+
+        if (Physics.Raycast(HalfPos, transform.forward, out RaycastHit hit, rcValues.CatchedWallRange))
+        {
+            if (hit.collider.CompareTag("Wall"))
+            {
+                return ECatched.WALL;
+            }
+        }
+        else if (Physics.Raycast(HalfPos, transform.forward, out RaycastHit hitM, rcValues.CatchedRange))
+        {
+            if (hitM.collider.CompareTag("Player"))
+            {
+                return ECatched.MARIO;
+            }
+        }
+
+        return ECatched.NOTHING;
     }
 }

@@ -8,7 +8,10 @@ public class CInfo : MonoBehaviour
     public GameObject FPInfo = null;
     public GameObject CharaStatus01 = null;
     public GameObject CharaStatus02 = null;
-    public GameObject AnnounceObject = null;
+
+    public GameObject winAnnounce = null;
+    public GameObject winChara01 = null;
+    public GameObject winChara02 = null;
 
     private bool isEnd = false;
 
@@ -45,6 +48,18 @@ public class CInfo : MonoBehaviour
         CharaStatus01.SetActive(false);
         CharaStatus02.SetActive(false);
         FPInfo.SetActive(false);
-        AnnounceObject.SetActive(true);
+
+        winAnnounce.SetActive(true);
+
+        if (GameManager.instance.memberIndex == (int)EMEMBER.MARIO)
+        {
+            winChara01.SetActive(true);
+        }
+        else
+        {
+            winChara01.SetActive(true);
+            winChara02.SetActive(true);
+        }
+
     }
 }

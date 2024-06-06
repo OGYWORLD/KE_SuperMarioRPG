@@ -242,7 +242,7 @@ public class CActionCommand : MonoBehaviour
         else  if (Input.GetKeyDown(KeyCode.K))
         {
             bool isLevelUp = false;
-            for (int i = 0; i < (int)GameManager.instance.memberIndex; i++)
+            for (int i = 0; i <= (int)GameManager.instance.memberIndex; i++)
             {
                 if (GameManager.instance.members[i].m_leftExp <= GameManager.instance.members[i].m_exp)
                 {
