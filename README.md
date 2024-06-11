@@ -9,7 +9,7 @@
 
 * 사용 엔진: Unity
 
-* 시연 영상: 
+* 시연 영상: https://youtu.be/xw6bHS1r2R4?si=wTdIaZPTQPoJkaOI
 
 <hr/>
 
